@@ -5,6 +5,9 @@
         <content>
         <!-- <Label id="new" text="testest"></Label> -->
         <table:Table id="newtab" rows="{/Supplier}">
+        <table:columns>
+
+        
 
         <table:Column id="col1">
               <Label id="1234" text="Sm Id"/>
@@ -13,7 +16,7 @@
               </table:template>
             </table:Column>
 
-          <table:columns>
+          
             <table:Column id="col2">
               <Label id="123" text="Supplier Name"/>
               <table:template>
@@ -21,7 +24,7 @@
               </table:template>
             </table:Column>
             
-            <table:Column id="col3">
+             <table:Column id="col3">
               <Label id="121" text="Vendor Code"/>
               <table:template>
                 <Text id="124" text="{erp_vendor_code}"/>
@@ -42,14 +45,14 @@
               </table:template>
             </table:Column>
 
-            <table:Column id="col6">
+             <table:Column id="col6">
               <Label id="19b" text="End Date"/>
               <table:template>
                 <Text id="13b" text="{reg_end_date}"/>
               </table:template>
             </table:Column>
 
-            <!-- Add additional columns if needed -->
+            
           </table:columns>
 
         </table:Table>
