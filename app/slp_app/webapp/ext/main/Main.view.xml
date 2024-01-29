@@ -1,0 +1,20 @@
+<mvc:View xmlns:table="sap.ui.table" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:macros="sap.fe.macros"
+    xmlns:html="http://www.w3.org/1999/xhtml" controllerName="slpnamespace.slpapp.ext.main.Main">
+    <Page id="Main" title="{i18n>MainTitle}">
+    <Label id="lab2" text="hello"></Label>
+        <content>
+        <!-- <Label id="new" text="testest"></Label> -->
+        <table:Table id="newtab" rows="{/Supplier}">
+          <table:columns>
+            <table:Column id="col1">
+              <Label id="123" text="Supplier Name"/>
+              <table:template>
+                <Text id="12345" text="{supplier_name}"/>
+              </table:template>
+            </table:Column>
+            <!-- Add additional columns if needed -->
+          </table:columns>
+        </table:Table>
+        </content>
+    </Page>
+</mvc:View>
