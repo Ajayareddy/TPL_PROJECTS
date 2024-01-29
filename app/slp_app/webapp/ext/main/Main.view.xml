@@ -1,7 +1,7 @@
 <mvc:View xmlns:table="sap.ui.table" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:macros="sap.fe.macros"
     xmlns:html="http://www.w3.org/1999/xhtml" controllerName="slpnamespace.slpapp.ext.main.Main">
     <Page id="Main" title="{i18n>MainTitle}">
-    <Label id="lab2" text="hello"></Label>
+    <Label id="lab2" text="Supplier Registration"></Label>
         <content>
         <!-- <Label id="new" text="testest"></Label> -->
         <table:Table id="newtab" rows="{/Supplier}">
@@ -10,6 +10,31 @@
               <Label id="123" text="Supplier Name"/>
               <table:template>
                 <Text id="12345" text="{supplier_name}"/>
+              </table:template>
+            </table:Column>
+            
+             <table:Column id="col3">
+              <Label id="1234" text="Sm Id"/>
+              <table:template>
+                <Text id="122" text="{sm_id }"/>
+              </table:template>
+            </table:Column>
+            <table:Column id="col4">
+              <Label id="121" text="Vendor Code"/>
+              <table:template>
+                <Text id="124" text="{erp_vendor_code }"/>
+              </table:template>
+            </table:Column>
+            <table:Column id="col5">
+              <Label id="19" text="TAT"/>
+              <table:template>
+                <Text id="13" text="{tat_for_registration_completion }"/>
+              </table:template>
+            </table:Column>
+            <table:Column id="col6">
+              <Label id="14" text="Vendor code"/>
+              <table:template>
+                <Text id="16" text="{erp_vendor_code }"/>
               </table:template>
             </table:Column>
             <!-- Add additional columns if needed -->
