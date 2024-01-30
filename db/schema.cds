@@ -17,5 +17,5 @@ entity Tasks {
         start_date : String;
         end_date   : String;
         user       : String;
-        supplier : Association to one Supplier;
+        supplier : Association to one Supplier on supplier.sm_id = sm_id;
 }

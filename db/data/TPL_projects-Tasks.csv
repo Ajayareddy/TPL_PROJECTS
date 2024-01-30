@@ -1,0 +1,10 @@
+task_name,sm_id,start_date,end_date,user
+Supplier Registration questionnaire submission,1,2022-01-01,2022-01-10,JohnDoe
+Api Validation,1,2022-02-15,2022-03-01,JaneSmith
+Approval for Supplier Registration questionnaire for Exceptions,1,2022-04-05,2022-04-20,BobJohnson
+Finance to do the bank validation,1,2022-06-10,2022-06-25,AliceWilliams
+complete finance internal questionnaire,1,2022-07-15,2022-07-30,CharlieBrown
+complete internal Registration questionnaire,1,2022-08-10,2022-08-25,DianaMiller
+Initiate finance vetting process,1,2022-09-05,2022-09-20,EricDavis
+Initiate CE Process,1,2022-10-10,2022-10-25,FionaSmith
+Final Approvals for Vendor code creation,1,2022-11-15,2022-11-30,GeorgeJohnson
