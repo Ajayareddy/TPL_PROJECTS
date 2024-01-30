@@ -17,58 +17,33 @@
               <Label id="1234" text="Sm Id"/>
               <table:template>
                 <Text id="122" text="{sm_id}"/>
-<<<<<<< HEAD
-=======
               </table:template>
             </table:Column>
             <table:Column id="col3">
               <Label id="121" text="Vendor Code"/>
               <table:template>
                 <Text id="124" text="{erp_vendor_code}"/>
->>>>>>> 0d0fa45 (tt)
               </table:template>
             </table:Column>
             <table:Column id="col4">
               <Label id="19" text="TAT"/>
               <table:template>
-<<<<<<< HEAD
-                <Text id="124" text="{erp_vendor_code}"/>
-=======
                 <Text id="13" text="{tat_for_registration_completion}"/>
->>>>>>> 0d0fa45 (tt)
               </table:template>
             </table:Column>
             <table:Column id="col5">
               <Label id="15" text="Start Date"/>
               <table:template>
-<<<<<<< HEAD
-                <Text id="13" text="{tat_for_registration_completion}"/>
-=======
                 <Text id="12" text="{reg_start_date}"/>
->>>>>>> 0d0fa45 (tt)
               </table:template>
             </table:Column>
-
             <table:Column id="col6">
-<<<<<<< HEAD
-              <Label id="14" text="Start Date"/>
-              <table:template>
-                <Text id="16" text="{reg_start_date}"/>
-=======
               <Label id="14" text="End Date"/>
               <table:template>
                 <Text id="16" text="{reg_end_date}"/>
->>>>>>> 0d0fa45 (tt)
               </table:template>
             </table:Column>
-
-             <table:Column id="col7">
-              <Label id="142" text="End Date"/>
-              <table:template>
-                <Text id="162" text="{reg_end_date}"/>
-              </table:template>
-            </table:Column>
-
+            <!-- Add additional columns if needed -->
           </table:columns>
         </table:Table>
         </content>
