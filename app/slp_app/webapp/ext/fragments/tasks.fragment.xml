@@ -1,0 +1,45 @@
+<!-- MyFragment.fragment.xml -->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <VBox id="22">
+        <ObjectAttribute 
+            id ="44"
+            title="Tasks"
+            text="{/selectedRowData/details}"
+            visible="{/selectedRowData/expanded}" />
+        <Table id="432"
+            items="{/selectedRowData/associatedData}"
+            visible="{/selectedRowData/expanded}">
+            <!-- Define columns and bindings for the associated table -->
+            <Column id ="45">
+                <Text id="13" text="Task name "/>
+            </Column>
+            <Column id ="48">
+                <Text id="14" text="start Date"/>
+            </Column>
+            <Column id ="47">
+                <Text id="12" text="End Date"/>
+            </Column>
+             <Column id ="49">
+                <Text id="16" text="User"/>
+            </Column>
+            <!-- Add more columns as needed -->
+            <items>
+                <ColumnListItem id="46">
+                    <cells>
+                        <Text id="55" text="{task_name}"/>
+                    </cells>
+                     <cells>
+                        <Text id="57" text="{start_date}"/>
+                    </cells>
+                     <cells>
+                        <Text id="58" text="{end_date}"/>
+                    </cells>
+                     <cells>
+                        <Text id="59" text="{user}"/>
+                        <!-- Add more cells for each property -->
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </VBox>
+</core:FragmentDefinition>

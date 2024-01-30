@@ -1,4 +1,4 @@
-sm_id,supplier_name,erp_vendor_code,tat_for_registration_completion,reg_start_date,reg_end_date
-1,SupplierA,VENDOR001,3 days,2024-01-01,2024-01-10
-3,SupplierC,VENDOR003,2 days,2024-03-08,2024-03-12
-2,SupplierB,VENDOR002,5 days,2024-02-15,2024-02-25
+sm_id,supplier_name,erp_vendor_code
+S1001,Supplier A,VEND001
+S1002,Supplier B,VEND002
+S1003,Supplier C,VEND003

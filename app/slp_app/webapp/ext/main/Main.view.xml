@@ -1,54 +1,95 @@
-<mvc:View xmlns:table="sap.ui.table" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:macros="sap.fe.macros"
-    xmlns:html="http://www.w3.org/1999/xhtml" controllerName="slpnamespace.slpapp.ext.main.Main">
-    <Page id="Main" title="{i18n>MainTitle}">
-    <Label id="lab2" text="Supplier Registration"></Label>
-        <content>
-        <!-- <Label id="new" text="testest"></Label> -->
-        <table:Table id="newtab" rows="{/Supplier}">
-          <table:columns>
-            <table:Column id="col1">
-              <Label id="123" text="Supplier Name"/>
-              <table:template>
-                <HBox justifyContent="SpaceBetween" id="tes1t">
-                  <Text id="12345" text="{supplier_name}" />
-                  <Button id="123345" text="v" press="{task_name}"/>
-                </HBox>
-              </table:template>
-            </table:Column>
-            
-             <table:Column id="col2">
-              <Label id="1234" text="Sm Id"/>
-              <table:template>
-                <Text id="122" text="{sm_id}"/>
-              </table:template>
-            </table:Column>
-            <table:Column id="col3">
-              <Label id="121" text="Vendor Code"/>
-              <table:template>
-                <Text id="124" text="{erp_vendor_code}"/>
-              </table:template>
-            </table:Column>
-            <table:Column id="col4">
-              <Label id="19" text="TAT"/>
-              <table:template>
-                <Text id="13" text="{tat_for_registration_completion}"/>
-              </table:template>
-            </table:Column>
-            <table:Column id="col5">
-              <Label id="15" text="Start Date"/>
-              <table:template>
-                <Text id="12" text="{reg_start_date}"/>
-              </table:template>
-            </table:Column>
-            <table:Column id="col6">
-              <Label id="14" text="End Date"/>
-              <table:template>
-                <Text id="16" text="{reg_end_date}"/>
-              </table:template>
-            </table:Column>
-            <!-- Add additional columns if needed -->
-          </table:columns>
-        </table:Table>
-        </content>
-    </Page>
+<mvc:View xmlns:mvc="sap.ui.core.mvc" 
+xmlns:core="sap.ui.core" 
+xmlns="sap.m" 
+controllerName="slpnamespace.slpapp.ext.main.Main"
+displayBlock="true" 
+xmlns:f="sap.f"
+xmlns:table="sap.ui.table" 
+xmlns:macros="sap.fe.macros"
+xmlns:html="http://www.w3.org/1999/xhtml"
+xmlns:layout="sap.ui.layout">
+
+	<App id="app">
+		<pages>
+			<f:DynamicPage id="dynamicPageId">
+				<f:content>
+					<Table id="tab1" selectionChange="onTableRowSelect" inset="false" width="100%" items="{/Supplier}">
+						<headerToolbar>
+							<Toolbar id="tool1">
+								<Title id="title1" text="TPL Report"></Title>
+								<ToolbarSpacer id="tools"></ToolbarSpacer>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column id="column0">
+								<header>
+									<Label text="SM ID" id="label0"/>
+								</header>
+							</Column>
+							<Column id="column1">
+								<header>
+									<Label text="Supplier Name" id="label1"/>
+								</header>
+							</Column>
+							<Column id="column2">
+								<header>
+									<Label text="ERP Vendor Code" id="label2"/>
+								</header>
+							</Column>
+							<Column id="col1" width="3rem"></Column>
+							<Column id="col3" minScreenWidth="1370px" demandPopin="true" visible="true"></Column>
+						</columns>
+						<items>
+							<ColumnListItem id="item0">
+								<cells>
+									<Text id="sm_id" text="{sm_id}"/>
+									<Text id="supplier_name" text="{supplier_name}"/>
+									<Text id="erp_vendor_code" text="{erp_vendor_code}"/>
+									<core:Icon id="icon" src="sap-icon://expand" press="onRowShiftAction"></core:Icon>
+									<Table  id="item_table" items="{path:'tasks', templateShareable:false}" visible="false">
+										<ColumnListItem id="collistitm" >
+											<cells>
+												<Text  id="task_name" text="{task_name}"/>
+												<Text  id="start_date" text="{start_date}"/>
+												<Text  id="end_date" text="{end_date}"/>
+												<Text  id="tat_for_registration_completion" text="{tat_for_registration_completion}"/>
+												<Text  id="user" text="{user}"/>
+											</cells>
+										</ColumnListItem>
+										<columns>
+											<Column id="col11">
+												<header>
+													<Label id="1" text="Task Name"/>
+												</header>
+											</Column>
+											<Column  id="col12">
+												<header>
+													<Label id="2" text="Start Date"/>
+												</header>
+											</Column>
+											<Column  id="col13">
+												<header>
+													<Label id="3" text="End Date"/>
+												</header>
+											</Column>
+											<Column  id="col14">
+												<header>
+													<Label id="4" text="TAT Registration"/>
+												</header>
+											</Column>
+											<Column  id="col15">
+												<header>
+													<Label id="5" text="User"/>
+												</header>
+											</Column>
+										</columns>
+									</Table>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</f:content>
+			</f:DynamicPage>
+		</pages>
+	</App>
 </mvc:View>

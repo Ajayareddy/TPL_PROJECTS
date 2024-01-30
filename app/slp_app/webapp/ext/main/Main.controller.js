@@ -11,9 +11,12 @@ sap.ui.define(
              * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
              * @memberOf slpnamespace.slpapp.ext.main.Main
              */
-            //  onInit: function () {
-            //
-            //  },
+             onInit: function () {
+                // debugger
+
+                // this.getView().getContent()[0].getContent()[1].getColumns()[0].getTemplate().getItems()[1].setVisible(false);
+            
+             },
 
             /**
              * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
@@ -40,6 +43,35 @@ sap.ui.define(
             //  onExit: function() {
             //
             //  }
+            // collapse: function (oEvent) {
+            //     debugger
+            //     var tablehide = oEvent.getSource().getParent().getParent().getParent().getParent().getColumns()[0].getTemplate().getItems()[1];
+            //     if (tablehide.getVisible()==true) {
+            //         tablehide.setVisible(false);
+                    
+            //     }
+            //     else
+            //     {
+            //         tablehide.setVisible(true);
+            //     }
+
+            
+            // }
+            onTableRowSelect: function (oEvent) {
+                console.log("ola");
+                var selectedRow = oEvent.getParameter("tasks");
+            },
+            onRowShiftAction: function (oEvent) {
+                var oSource = oEvent.getSource(),
+                    oRow = oSource.getParent();
+                if (oSource.getSrc() === "sap-icon://expand") {
+                    oSource.setSrc("sap-icon://collapse");
+                    oRow.getCells()[5].setVisible(true);
+                } else {
+                    oSource.setSrc("sap-icon://expand");
+                    oRow.getCells()[5].setVisible(false);
+                }
+            }
         });
     }
 );
