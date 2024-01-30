@@ -9,7 +9,10 @@
             <table:Column id="col1">
               <Label id="123" text="Supplier Name"/>
               <table:template>
-                <Text id="12345" text="{supplier_name}"/>
+                <HBox justifyContent="SpaceBetween" id="tes1t">
+                  <Text id="12345" text="{supplier_name}" />
+                  <Button id="123345" text="v" press="{task_name}"/>
+                </HBox>
               </table:template>
             </table:Column>
             
