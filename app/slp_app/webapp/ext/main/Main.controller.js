@@ -76,82 +76,13 @@ sap.ui.define(
             onRowShiftAction: function (oEvent) {
                 debugger
                 var oSource = oEvent.getSource(),
-                oRow = oSource.getParent().getParent(),
-                oTable = this.getView().byId("tab1"),
-                aItems = oTable.getItems(),
-                index = 0,
-                that = this;
-    //Loop to get the current item index
-                for (var i in aItems) {
-                    if (aItems[i].getBindingContextPath() === oRow.getBindingContextPath()) {
-                        index = i;
-                    }
-                }
-    //Check to count child tables created for different rows to generate unique ID
-                if (!this.childCount) {
-                    this.childCount = 1;
+                    oRow = oSource.getParent();
+                if (oSource.getSrc() === "sap-icon://expand") {
+                    oSource.setSrc("sap-icon://collapse");
+                    oRow.getCells()[4].setVisible(true);
                 } else {
-                    this.childCount++;
-                }
-    
-                if (oSource.getSrc() === "sap-icon://navigation-right-arrow") {
-                    oSource.setSrc("sap-icon://navigation-down-arrow");
-                    var oItemTemplate = new sap.m.ColumnListItem({
-                        cells: [
-                            new sap.m.Text({
-                                text: "{model>Col1}"
-                            }),
-                            new sap.m.Text({
-                                text: "{model>Col2}"
-                            }),
-                            new sap.m.Text({
-                                text: "{model>Col3}"
-                            })
-                        ]
-                    });
-                    // if (!this.oNewTable) {
-                    var width = window.innerWidth - 100;
-                    var oNewTable = new sap.m.Table({
-                        id: "item_table" + this.childCount,
-                        width: window.innerWidth - 100 + "px",
-                        columns: [
-                            new sap.m.Column({
-                                header: new sap.m.Text({
-                                    text: "task_name"
-                                }),
-                                width: "4rem"
-                            }),
-                            new sap.m.Column({
-                                minScreenWidth: "Tablet",
-                                demandPopin: true,
-                                popinDisplay: sap.m.PopinDisplay.Inline,
-                                header: new sap.m.Text({
-                                    text: "Col2"
-                                }),
-                                width: "6rem"
-                            }), new sap.m.Column({
-                                minScreenWidth: "Desktop",
-                                demandPopin: true,
-                                popinDisplay: sap.m.PopinDisplay.Inline,
-                                header: new sap.m.Text({
-                                    text: "Col3"
-                                }),
-                                width: "15rem"
-                            })
-                        ]
-                    });
-                    oNewTable.bindItems({
-                        path: "model>/EntitySet",
-                        template: oItemTemplate
-                    });
-                    oTable.insertItem(new sap.m.ColumnListItem({
-                        cells: [
-                            oNewTable
-                        ]
-                    }), parseInt(index) + 1);
-                } else {
-                    oTable.removeItem(aItems[parseInt(index) + 1]); //On collapse removing table
-                    oSource.setSrc("sap-icon://navigation-right-arrow");
+                    oSource.setSrc("sap-icon://expand");
+                    oRow.getCells()[4].setVisible(false);
                 }
             }
         });

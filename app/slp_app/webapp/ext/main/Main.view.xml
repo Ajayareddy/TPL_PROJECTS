@@ -36,7 +36,7 @@ xmlns:layout="sap.ui.layout">
 									<Label text="ERP Vendor Code" id="label2"/>
 								</header>
 							</Column>
-							<Column id="col1" width="3rem"></Column>
+							<Column id="col1" width="3rem"/>
 							<Column id="col3" minScreenWidth="1370px" demandPopin="true" visible="true"></Column>
 						</columns>
 						<items>
