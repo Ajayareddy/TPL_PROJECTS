@@ -17,8 +17,11 @@ xmlns:layout="sap.ui.layout">
 						<headerToolbar>
 							<Toolbar id="tool1">
 								<Title id="title1" text="TPL Report"></Title>
-								<ToolbarSpacer id="tools"></ToolbarSpacer>
+								<ToolbarSpacer id="tools">
+								</ToolbarSpacer>
+								<SearchField id="searchField" width="auto" enableSuggestions="true" search=".onFilterPosts" />
 							</Toolbar>
+							
 						</headerToolbar>
 						<columns>
 							<Column id="column0">

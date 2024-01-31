@@ -1,8 +1,10 @@
 sap.ui.define(
     [
-        'sap/fe/core/PageController'
+        'sap/fe/core/PageController',
+        "sap/ui/model/Filter",
+        "sap/ui/model/FilterOperator"
     ],
-    function(PageController) {
+    function(PageController, Filter, FilterOperator) {
         'use strict';
 
         return PageController.extend('slpnamespace.slpapp.ext.main.Main', {
@@ -84,7 +86,16 @@ sap.ui.define(
                     oSource.setSrc("sap-icon://expand");
                     oRow.getCells()[4].setVisible(false);
                 }
-            }
+            },
+
+            onFilterPosts: function (oEvent) {
+                debugger
+                var sValue = oEvent.getParameter("query");
+                var oFilter = new Filter("sm_id", FilterOperator.Contains, sValue); // Adjust property name accordingly
+                var oTable = this.getView().byId("tab1");
+                var oBinding = oTable.getBinding("items");
+                oBinding.filter([oFilter]);
+              }
         });
     }
 );
