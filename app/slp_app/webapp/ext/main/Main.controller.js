@@ -82,19 +82,32 @@ sap.ui.define(
                 if (oSource.getSrc() === "sap-icon://expand") {
                     oSource.setSrc("sap-icon://collapse");
                     oRow.getCells()[4].setVisible(true);
+                    oRow.addStyleClass("customclasscolorback");
+                    // for (let i = 0; i < oRow.getCells().length-1; i++) {
+                    //     oRow.getCells()[i].addStyleClass("customclasscolor")
+                        
+                    // }
                 } else {
                     oSource.setSrc("sap-icon://expand");
                     oRow.getCells()[4].setVisible(false);
+                    // for (let i = 0; i < oRow.getCells().length-1; i++) {
+                    //     oRow.getCells()[i].removeStyleClass("customclasscolor")
+                        
+                    // }
+                    oRow.removeStyleClass("customclasscolorback");
                 }
             },
 
             onFilterPosts: function (oEvent) {
                 debugger
                 var sValue = oEvent.getParameter("query");
-                var oFilter = new Filter("sm_id", FilterOperator.Contains, sValue); // Adjust property name accordingly
+                var oFilter1 = new Filter("supplier_name", FilterOperator.Contains, sValue); // Adjust property name accordingly
+                var oFilter2 = new Filter("sm_id", FilterOperator.Contains, sValue); // Adjust property name accordingly
+                var oFilter3 = new Filter("erp_vendor_code", FilterOperator.Contains, sValue); // Adjust property name accordingly
+                var oCombinedFilter = new Filter({filters: [oFilter1, oFilter2,oFilter3],and: false });
                 var oTable = this.getView().byId("tab1");
                 var oBinding = oTable.getBinding("items");
-                oBinding.filter([oFilter]);
+                oBinding.filter([oCombinedFilter]);
               }
         });
     }

@@ -9,6 +9,7 @@ xmlns:macros="sap.fe.macros"
 xmlns:html="http://www.w3.org/1999/xhtml"
 xmlns:layout="sap.ui.layout">
 
+
 	<App id="app">
 		<pages>
 			<f:DynamicPage id="dynamicPageId">
@@ -16,7 +17,7 @@ xmlns:layout="sap.ui.layout">
 					<Table id="tab1" selectionChange="onTableRowSelect" inset="false" width="100%" items="{/Supplier}">
 						<headerToolbar>
 							<Toolbar id="tool1">
-								<Title id="title1" text="TPL Report"></Title>
+								<Title id="title1" text="TAT for Supplier Registration"></Title>
 								<ToolbarSpacer id="tools">
 								</ToolbarSpacer>
 								<SearchField id="searchField" width="auto" enableSuggestions="true" search=".onFilterPosts" />
@@ -49,6 +50,7 @@ xmlns:layout="sap.ui.layout">
 									<Text id="supplier_name" text="{supplier_name}"/>
 									<Text id="erp_vendor_code" text="{erp_vendor_code}"/>
 									<core:Icon id="icon" src="sap-icon://expand" press="onRowShiftAction"></core:Icon>
+
 									<Table  id="item_table" items="{path:'tasks', templateShareable:false}" visible="false">
 										<ColumnListItem id="collistitm" >
 											<cells>
@@ -59,30 +61,30 @@ xmlns:layout="sap.ui.layout">
 												<Text  id="user" text="{user}"/>
 											</cells>
 										</ColumnListItem>
-										<columns>
-											<Column id="col11">
+										<columns >
+											<Column id="col11" >
 												<header>
-													<Label id="1" text="Task Name"/>
+													<Label id="1" text="Task Name" />
 												</header>
 											</Column>
-											<Column  id="col12">
+											<Column  id="col12" >
 												<header>
 													<Label id="2" text="Start Date"/>
 												</header>
 											</Column>
 											<Column  id="col13">
 												<header>
-													<Label id="3" text="End Date"/>
+													<Label id="3" text="End Date" />
 												</header>
 											</Column>
 											<Column  id="col14">
 												<header>
-													<Label id="4" text="TAT Registration"/>
+													<Label id="4" text="TAT(No. of Days)" />
 												</header>
 											</Column>
 											<Column  id="col15">
 												<header>
-													<Label id="5" text="User"/>
+													<Label id="5" text="User" />
 												</header>
 											</Column>
 										</columns>
