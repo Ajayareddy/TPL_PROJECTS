@@ -63,40 +63,34 @@ sap.ui.define(
                 console.log("ola");
                 var selectedRow = oEvent.getParameter("tasks");
             },
-            // onRowShiftAction: function (oEvent) {
-            //     var oSource = oEvent.getSource(),
-            //         oRow = oSource.getParent();
-            //     if (oSource.getSrc() === "sap-icon://expand") {
-            //         oSource.setSrc("sap-icon://collapse");
-            //         oRow.getCells()[5].setVisible(true);
-            //     } else {
-            //         oSource.setSrc("sap-icon://expand");
-            //         oRow.getCells()[5].setVisible(false);
-            //     }
-            // }
+           
 
             onRowShiftAction: function (oEvent) {
                 debugger
                 var oSource = oEvent.getSource(),
                     oRow = oSource.getParent();
+                    var inner_table  = oRow.getCells()[4];
                 if (oSource.getSrc() === "sap-icon://expand") {
                     oSource.setSrc("sap-icon://collapse");
                     oRow.getCells()[4].setVisible(true);
+                    
+                    // oRow.getCells()[4].mAggregations.columns[0].setStyleClass("customclasscolorback")
                     oRow.addStyleClass("customclasscolorback");
                     // for (let i = 0; i < oRow.getCells().length-1; i++) {
-                    //     oRow.getCells()[i].addStyleClass("customclasscolor")
-                        
+                    //     oRow.getCells()[i].addStyleClass("customclasscolor")    
                     // }
                 } else {
                     oSource.setSrc("sap-icon://expand");
                     oRow.getCells()[4].setVisible(false);
                     // for (let i = 0; i < oRow.getCells().length-1; i++) {
                     //     oRow.getCells()[i].removeStyleClass("customclasscolor")
-                        
                     // }
                     oRow.removeStyleClass("customclasscolorback");
                 }
             },
+
+           
+            
 
             onFilterPosts: function (oEvent) {
                 debugger

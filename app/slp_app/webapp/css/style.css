@@ -8,17 +8,33 @@
     color: white;
 }
 
-.customclasscolorback{
-    background:#D3D3D3;
-}
+/* .sapMColumnHeaderContent{
+    background: #962525;
+} */
+
 /* 
 .sapMTableTHead{
     background-color:#99CCFF ;
 } */
+.sapMTableTH{
+    background:#D3D3D3;
+}
+
+.customclasscolorback{
+    background: rgb(195, 233, 250);
+}
+
+.testtest{
+    background: black;
+}
 
 .sapMListTblSubRow{
     background: rgb(225, 234, 243);
     padding: 2px;
+}
+
+.custumcss{
+    background: aqua;
 }
 
 .myTableHeader {
