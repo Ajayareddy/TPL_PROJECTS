@@ -95,9 +95,27 @@ sap.ui.define(
             onFilterPosts: function (oEvent) {
                 debugger
                 var sValue = oEvent.getParameter("query");
-                var oFilter1 = new Filter("supplier_name", FilterOperator.Contains, sValue); // Adjust property name accordingly
-                var oFilter2 = new Filter("sm_id", FilterOperator.Contains, sValue); // Adjust property name accordingly
-                var oFilter3 = new Filter("erp_vendor_code", FilterOperator.Contains, sValue); // Adjust property name accordingly
+                // var oFilter1 = new Filter("supplier_name", FilterOperator.Contains, sValue, false );
+                // var oFilter2 = new Filter("sm_id", FilterOperator.Contains, sValue); // Adjust property name accordingly
+                // var oFilter3 = new Filter("erp_vendor_code", FilterOperator.Contains, sValue); // Adjust property name accordingly 
+                var oFilter1 = new Filter({
+                    path: "supplier_name",
+                    operator: FilterOperator.Contains,
+                    value1: sValue.toLowerCase(), // Convert input value to lowercase
+                    caseSensitive: false  // Set caseSensitive to false
+                });
+                var oFilter2 = new Filter({
+                    path: "sm_id",
+                    operator: FilterOperator.Contains,
+                    value1: sValue.toLowerCase(), // Convert input value to lowercase
+                    caseSensitive: false  // Set caseSensitive to false
+                });
+                var oFilter3 = new Filter({
+                    path: "erp_vendor_code",
+                    operator: FilterOperator.Contains,
+                    value1: sValue.toLowerCase(), // Convert input value to lowercase
+                    caseSensitive: false  // Set caseSensitive to false
+                });
                 var oCombinedFilter = new Filter({filters: [oFilter1, oFilter2,oFilter3],and: false });
                 var oTable = this.getView().byId("tab1");
                 var oBinding = oTable.getBinding("items");
