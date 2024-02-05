@@ -51,7 +51,7 @@ xmlns:layout="sap.ui.layout">
 									<Text id="erp_vendor_code" text="{erp_vendor_code}"/>
 									<core:Icon id="icon" src="sap-icon://expand" press="onRowShiftAction"></core:Icon>
 
-									<Table  id="item_table" items="{path:'tasks', templateShareable:false}" visible="false" class="custumcss">
+									<Table  id="item_table" items="{path:'tasks', templateShareable:false}" visible="false">
 										<ColumnListItem id="collistitm" >
 											<cells>
 												<Text  id="task_name" text="{task_name}"/>
