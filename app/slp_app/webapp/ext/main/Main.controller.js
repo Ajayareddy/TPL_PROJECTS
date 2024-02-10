@@ -96,8 +96,8 @@ sap.ui.define(
                 debugger
                 var sValue = oEvent.getParameter("query");
                 // var oFilter1 = new Filter("supplier_name", FilterOperator.Contains, sValue, false );
-                // var oFilter2 = new Filter("sm_id", FilterOperator.Contains, sValue); // Adjust property name accordingly
-                // var oFilter3 = new Filter("erp_vendor_code", FilterOperator.Contains, sValue); // Adjust property name accordingly 
+                // var oFilter2 = new Filter("sm_id", FilterOperator.Contains, sValue); 
+                // var oFilter3 = new Filter("erp_vendor_code", FilterOperator.Contains, sValue); 
                 var oFilter1 = new Filter({
                     path: "supplier_name",
                     operator: FilterOperator.Contains,
@@ -107,14 +107,14 @@ sap.ui.define(
                 var oFilter2 = new Filter({
                     path: "sm_id",
                     operator: FilterOperator.Contains,
-                    value1: sValue.toLowerCase(), // Convert input value to lowercase
-                    caseSensitive: false  // Set caseSensitive to false
+                    value1: sValue.toLowerCase(), 
+                    caseSensitive: false  
                 });
                 var oFilter3 = new Filter({
                     path: "erp_vendor_code",
                     operator: FilterOperator.Contains,
-                    value1: sValue.toLowerCase(), // Convert input value to lowercase
-                    caseSensitive: false  // Set caseSensitive to false
+                    value1: sValue.toLowerCase(), 
+                    caseSensitive: false  
                 });
                 var oCombinedFilter = new Filter({filters: [oFilter1, oFilter2,oFilter3],and: false });
                 var oTable = this.getView().byId("tab1");
