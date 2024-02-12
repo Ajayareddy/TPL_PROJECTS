@@ -14,7 +14,7 @@ xmlns:layout="sap.ui.layout">
 		<pages>
 			<f:DynamicPage id="dynamicPageId">
 				<f:content>
-					<Table id="tab1" selectionChange="onTableRowSelect" inset="false" width="100%" items="{/Supplier}">
+					<Table id="tab1" selectionChange="onTableRowSelect" inset="false" width="100%" fixedLayout="Strict" items="{/Supplier}">
 						<headerToolbar>
 							<Toolbar id="tool1">
 								<Title id="title1" text="TAT for Supplier Registration"></Title>

@@ -89,6 +89,148 @@ sap.ui.define(
                 }
             },
 
+            // onRowShiftAction: async function (oEvent) {
+
+            //     debugger
+            //     var oSource = oEvent.getSource(),
+            //         oRow = oSource.getParent(),
+            //         oTable = this.getView().byId("tab1"),
+            //         aItems = oTable.getItems(),
+            //         index = 0,
+            //         that = this;
+            //     var inner_table = oRow.getCells()[4];
+            //     //Loop to get the current item index
+            //     for (var i in aItems) {
+            //         if (aItems[i].getBindingContextPath() === oRow.getBindingContextPath()) {
+            //             index = i;
+            //         }
+            //     }
+            //     //Check to count child tables created for different rows to generate unique ID
+            //     if (!this.childCount) {
+            //         this.childCount = 1;
+            //     } else {
+            //         this.childCount++;
+            //     }
+
+            //     if (oSource.getSrc() === "sap-icon://expand") {
+            //         debugger
+            //         oRow.addStyleClass("customclasscolorback");
+            //         var t_data;
+            //         var s = oEvent.oSource.getParent().mAggregations.cells[0].mProperties.text;
+            //         await $.ajax({
+            //             url: `/odata/v4/tpl-service/Supplier('${s}')?$expand=tasks`,
+            //             type: "GET",
+            //             contentType: "application/json",
+            //             success: function (a) {
+            //                 var temp = a.tasks;
+            //                 t_data = {
+            //                     tasks : temp 
+            //                 };
+            //             },
+            //             error: function (t) {
+            //                 e.show("Error updating data on the server.")
+            //             }
+            //         })
+
+            //         var jsonModel = new sap.ui.model.json.JSONModel();
+            //         jsonModel.setData(t_data);
+                    
+            //         oSource.setSrc("sap-icon://collapse");
+                    
+            //         var oItemTemplate = new sap.m.ColumnListItem({
+            //             cells: [
+            //                 new sap.m.Text({
+            //                     text: "{task_name}"
+            //                 }),
+            //                 new sap.m.Text({
+            //                     text: "{start_date}"
+            //                 }),
+            //                 new sap.m.Text({
+            //                     text: "{end_date}"
+            //                 }),
+            //                 new sap.m.Text({
+            //                     text: "{tat_for_registration_completion}"
+            //                 }),
+            //                 new sap.m.Text({
+            //                     text: "{user} 123"
+            //                 })
+            //             ]
+            //         });
+            //         // if (!this.oNewTable) {
+            //         var width = window.innerWidth - 100;
+            //         var oNewTable = new sap.m.Table('newtable',{
+            //             id: "idChildTable" + this.childCount,
+            //             width: window.innerWidth - 100 + "px",
+            //             columns: [
+            //                 new sap.m.Column({
+            //                     header: new sap.m.Text({
+            //                         text: "Task Name"
+            //                     }),
+            //                     width: "4rem"
+            //                 }),
+            //                 new sap.m.Column({
+            //                     minScreenWidth: "Tablet",
+            //                     demandPopin: true,
+            //                     popinDisplay: sap.m.PopinDisplay.Inline,
+            //                     header: new sap.m.Text({
+            //                         text: "Start Date"
+            //                     }),
+            //                     width: "4rem"
+            //                 }), new sap.m.Column({
+            //                     minScreenWidth: "Tablet",
+            //                     demandPopin: true,
+            //                     popinDisplay: sap.m.PopinDisplay.Inline,
+            //                     header: new sap.m.Text({
+            //                         text: "End Date"
+            //                     }),
+            //                     width: "4rem"
+            //                 }), new sap.m.Column({
+            //                     minScreenWidth: "Tablet",
+            //                     demandPopin: true,
+            //                     popinDisplay: sap.m.PopinDisplay.Inline,
+            //                     header: new sap.m.Text({
+            //                         text: "TAT"
+            //                     }),
+            //                     width: "4rem"
+            //                 }), new sap.m.Column({
+            //                     demandPopin: true,
+            //                     popinDisplay: sap.m.PopinDisplay.Inline,
+            //                     header: new sap.m.Text({
+            //                         text: "User"
+            //                     }),
+            //                     width: "4rem"
+            //                 })
+            //             ]
+            //         });
+            //         oNewTable.bindItems({
+            //             path: "/tasks",
+            //             template: oItemTemplate
+            //         });
+
+            //         oNewTable.setModel(jsonModel);
+            //         oNewTable.addStyleClass("customclasscolorback");
+                    
+            //         oTable.insertItem(new sap.m.ColumnListItem({
+            //             cells:[
+            //                 oNewTable
+            //             ]
+            //         }), parseInt(index) + 1);
+
+            //         debugger
+                    
+            //         // oTable.insertItem(new sap.m.CustomListItem({
+            //         //     oNewTable
+            //         // }), parseInt(index) + 1);
+            //         // var custlist = oTable.getItems()[(parseInt(index) + 1)];
+            //         // custlist.addContent(oNewTable);
+            //         // custlist.addContent(oNewTable);
+            //     } else {
+            //         oTable.removeItem(aItems[parseInt(index) + 1]); //On collapse removing table
+            //         oSource.setSrc("sap-icon://expand");
+            //         oRow.removeStyleClass("customclasscolorback");
+            //     }
+            // },
+
            
             
 
